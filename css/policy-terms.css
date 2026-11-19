@@ -5,6 +5,24 @@ body {
   color: #1c1c1c !important;
 }
 
+.nav-link:hover,
+.nav-link:focus {
+  color: #FFFF00;
+    }
+    
+/* navbar drawer colors */
+.drawer-title {
+    color: #000000;
+    }
+    
+.drawer-body {
+    background: var(--primary)
+    }
+
+.navbar-toggler-icon {
+    color: var(--background)
+    }
+
 /* MAIN SECTION */
 .policy-container {
   background-color: #ffffff;
