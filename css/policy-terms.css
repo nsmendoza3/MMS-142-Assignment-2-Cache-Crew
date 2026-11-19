@@ -116,14 +116,6 @@ body {
   text-align: center !important;
 }
 
-/* FOOTER */
-footer .nav-link,
-footer .nav-link:hover,
-footer .nav-link:focus,
-footer span {
-  color: #ffffff !important;
-}
-
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .cards-grid {
