@@ -1,0 +1,81 @@
+:root {
+    --primary: #244C3A;
+    --text: #000000;
+    --background: #FFFFFF;
+    --accent: #DD5C36;
+    }
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--background);
+    }
+
+h1 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 700;
+    }
+  
+header {
+    background: var(--primary);
+    color: var(--background);
+    }
+
+footer {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #FFFFFF;
+    background: var(--primary);
+    
+    }
+    
+/* navbar background color */    
+nav {
+    background: var(--primary);
+    }
+
+/* navbar text colors */
+.nav-link {
+    color: #ffffff;
+    }
+ 
+.nav-link:hover,
+.nav-link:focus {
+  color: #FFFF00;
+    }
+    
+/* navbar drawer colors */
+.drawer-title {
+    color: #000000;
+    }
+    
+.drawer-body {
+    background: var(--primary)
+    }
+
+.navbar-toggler-icon {
+    color: var(--background)
+    }
+    
+/*bootstrap elements*/
+.btn-solid {
+    color: #FFFFFF;
+    background: var(--accent);
+    }
+    
+    
+/* Accessibility Check */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+    }
+
+.site-header a:focus-visible {
+    outline-color: #FFFF00;
+    }
