@@ -5,19 +5,6 @@ body {
   color: #1c1c1c !important;
 }
 
-/* NAVBAR & FOOTER BACKGROUND */
-.bg-1,
-.navbar,
-footer {
-  background-color: #244C3A !important;
-}
-
-.navbar .nav-link,
-.navbar .nav-link:hover,
-.navbar .nav-link:focus {
-  color: #ffffff !important;
-}
-
 /* MAIN SECTION */
 .policy-container {
   background-color: #ffffff;
