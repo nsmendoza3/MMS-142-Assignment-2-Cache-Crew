@@ -157,20 +157,21 @@ body {
 }
 
 /* PURCHASE BUTTONS */
-.btn-add-cart {
-  background: var(--plant-green);
-  color: #fff;
-}
-
 .btn-buy-now {
-  background: var(--plant-orange);
-  color: #fff;
+  background-color: var(--plant-orange) !important;
+  color: #fff !important;
+  border: 1px solid var(--plant-orange) !important;
+  transition: all 0.3s ease;
 }
 
-.btn-add-cart:hover,
-.btn-buy-now:hover {
-  color: #FFFF00;
-  filter: brightness(.93);
+.btn-buy-now:hover,
+.btn-buy-now:focus,
+.btn-buy-now:active {
+  background-color: #c94b2b !important;
+  border-color: #c94b2b !important;
+  color: #fff !important;
+  filter: none !important;
+  box-shadow: none !important;
 }
 
 /* FOOTER */
