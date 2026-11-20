@@ -1,13 +1,21 @@
 
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>PLANTeeShirts | Product 1</title>
 
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Existing Product CSS -->
   <link rel="stylesheet" href="css/product.css">
+
+  <!-- External JavaScript -->
+  <script src="js/mailto.js" defer></script>
 
   <!-- Compact Page Layout -->
   <style>
@@ -128,6 +136,7 @@
     }
 
   </style>
+
 </head>
 
 <body>
@@ -138,13 +147,16 @@
     <div class="container">
 
       <a class="brand-name" href="index.html">
+
         <img src="images/planteeshirts-logoB.png"
              alt="PLANTeeShirts Logo"
              height="60"
              class="d-inline-block align-text-top">
+
       </a>
 
-      <button class="navbar-toggler bg-light" type="button"
+      <button class="navbar-toggler bg-light"
+        type="button"
         data-bs-toggle="collapse"
         data-bs-target="#mainNavigation"
         aria-controls="mainNavigation"
@@ -152,9 +164,11 @@
         aria-label="Toggle navigation">
 
         <span class="navbar-toggler-icon"></span>
+
       </button>
 
       <div class="collapse navbar-collapse" id="mainNavigation">
+
         <ul class="navbar-nav ms-auto align-items-lg-center">
 
           <li class="nav-item">
@@ -174,9 +188,11 @@
           </li>
 
         </ul>
+
       </div>
 
     </div>
+
   </nav>
 
 
@@ -190,7 +206,6 @@
 
         <div class="product-gallery">
 
-          <!-- Front View Only -->
           <a href="images/product1front.png"
              target="_blank"
              rel="noopener"
@@ -204,6 +219,7 @@
           </a>
 
         </div>
+
 
         <!-- Product Description and Materials -->
         <div class="product-description">
@@ -228,7 +244,7 @@
         aria-label="Product information">
 
         <h1 class="product-title">
-         Do Good Work Tee: I Be-Leaf in You PLANTeeShirt
+          Do Good Work Tee: I Be-Leaf in You PLANTeeShirt
         </h1>
 
         <p class="product-price">₱850.00</p>
@@ -240,9 +256,25 @@
           <span class="option-label">COLOR</span>
 
           <div class="option-buttons">
-            <button type="button" class="btn btn-outline-secondary btn-sm color-option" onclick="selectColor(this)">WHITE</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm color-option" onclick="selectColor(this)">GRAY</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm color-option" onclick="selectColor(this)">BLACK</button>
+
+            <button type="button"
+              class="btn btn-outline-secondary btn-sm color-option"
+              onclick="selectColor(this)">
+              WHITE
+            </button>
+
+            <button type="button"
+              class="btn btn-outline-secondary btn-sm color-option"
+              onclick="selectColor(this)">
+              GRAY
+            </button>
+
+            <button type="button"
+              class="btn btn-outline-secondary btn-sm color-option"
+              onclick="selectColor(this)">
+              BLACK
+            </button>
+
           </div>
 
         </div>
@@ -254,9 +286,25 @@
           <span class="option-label">SIZE</span>
 
           <div class="option-buttons">
-            <button type="button" class="btn btn-outline-secondary btn-sm size-option" onclick="selectSize(this)">SMALL</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm size-option" onclick="selectSize(this)">MEDIUM</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm size-option" onclick="selectSize(this)">LARGE</button>
+
+            <button type="button"
+              class="btn btn-outline-secondary btn-sm size-option"
+              onclick="selectSize(this)">
+              SMALL
+            </button>
+
+            <button type="button"
+              class="btn btn-outline-secondary btn-sm size-option"
+              onclick="selectSize(this)">
+              MEDIUM
+            </button>
+
+            <button type="button"
+              class="btn btn-outline-secondary btn-sm size-option"
+              onclick="selectSize(this)">
+              LARGE
+            </button>
+
           </div>
 
         </div>
@@ -273,7 +321,9 @@
 
             <button type="button"
               aria-label="Decrease quantity"
-              onclick="changeQuantity(-1)">−</button>
+              onclick="changeQuantity(-1)">
+              −
+            </button>
 
             <input id="quantity"
               type="number"
@@ -284,7 +334,9 @@
 
             <button type="button"
               aria-label="Increase quantity"
-              onclick="changeQuantity(1)">+</button>
+              onclick="changeQuantity(1)">
+              +
+            </button>
 
           </div>
 
@@ -300,10 +352,10 @@
           </button>
 
           <button type="button"
-            class="btn btn-buy-now btn-sm fw-semibold"
-            onclick="orderNow()">
+            id="buy-now"
+            class="btn btn-buy-now btn-sm fw-semibold">
             BUY IT NOW
-          </button>  
+          </button>
 
         </div>
 
@@ -315,77 +367,28 @@
 
 
   <!-- Footer -->
-<footer class="site-footer">
-  <div class="container d-flex flex-row justify-content-center align-items-center gap-2">
-    <a href="privacy.html" class="nav-link">PRIVACY POLICY</a>
-    <span>|</span>
-    <a href="terms.html" class="nav-link">TERMS</a>
-  </div>
-</footer>
+  <footer class="site-footer">
+
+    <div class="container d-flex flex-row justify-content-center align-items-center gap-2">
+
+      <a href="privacy.html" class="nav-link">
+        PRIVACY POLICY
+      </a>
+
+      <span>|</span>
+
+      <a href="terms.html" class="nav-link">
+        TERMS
+      </a>
+
+    </div>
+
+  </footer>
 
 
   <!-- Bootstrap JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-
- <!-- Quantity and Order Functions -->
-<script>
-  let selectedColor = "";
-  let selectedSize = "";
-
-  // Select Color
-  function selectColor(button) {
-    document.querySelectorAll(".color-option").forEach(btn => {
-      btn.classList.remove("active");
-    });
-
-    button.classList.add("active");
-    selectedColor = button.textContent.trim();
-  }
-
-  // Select Size
-  function selectSize(button) {
-    document.querySelectorAll(".size-option").forEach(btn => {
-      btn.classList.remove("active");
-    });
-
-    button.classList.add("active");
-    selectedSize = button.textContent.trim();
-  }
-
-  // Quantity Function
-  function changeQuantity(amount) {
-    const quantityInput = document.getElementById("quantity");
-    const currentValue = parseInt(quantityInput.value, 10) || 1;
-
-    quantityInput.value = Math.max(1, Math.min(99, currentValue + amount));
-  }
-
-  // Buy Now Function
-  function orderNow() {
-    const quantity = document.getElementById("quantity").value;
-
-    if (!selectedColor || !selectedSize) {
-      alert("Please select your color and size before ordering!");
-      return;
-    }
-
-    if (!Number.isInteger(Number(quantity)) || Number(quantity) < 1 || Number(quantity) > 99) {
-      alert("Please enter a valid quantity!");
-      return;
-    }
-
-    alert(
-      "Thank you for your order!\n\n" +
-      "Product: I Be-Leaf in You PLANTeeShirt\n" +
-      "Color: " + selectedColor + "\n" +
-      "Size: " + selectedSize + "\n" +
-      "Quantity: " + quantity + "\n" +
-      "Total: ₱" + (850 * quantity).toFixed(2)
-    );
-  }
-</script>
-</script>
-
 </body>
+
 </html>
