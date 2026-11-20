@@ -242,8 +242,9 @@ body {
   }
 }
 
-.option-buttons .btn.selected {
-    background-color: var(--plant-green);
-    color: #FFFFFF;
-    border-color: var(--plant-green);
+/* SELECTED COLOR AND SIZE */
+.option-buttons .btn.active {
+    background-color: var(--plant-green) !important;
+    color: #FFFFFF !important;
+    border-color: var(--plant-green) !important;
 }
