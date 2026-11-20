@@ -300,7 +300,8 @@
           </button>
 
           <button type="button"
-            class="btn btn-buy-now btn-sm fw-semibold">
+            class="btn btn-buy-now btn-sm fw-semibold"
+            onclick="orderNow()">
             BUY IT NOW
           </button>
 
@@ -327,21 +328,45 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
-  <!-- Quantity Function -->
-  <script>
-    function changeQuantity(amount) {
+ <!-- Quantity and Order Functions -->
+<script>
+  function changeQuantity(amount) {
 
-      const quantityInput = document.getElementById("quantity");
+    const quantityInput = document.getElementById("quantity");
 
-      const currentValue = parseInt(quantityInput.value, 10) || 1;
+    const currentValue = parseInt(quantityInput.value, 10) || 1;
 
-      quantityInput.value = Math.max(
-        1,
-        Math.min(99, currentValue + amount)
-      );
+    quantityInput.value = Math.max(
+      1,
+      Math.min(99, currentValue + amount)
+    );
 
-    }
-  </script>
+  }
+
+  function orderNow() {
+
+    const quantity = document.getElementById("quantity").value;
+    const product = "I Be-Leaf in You PLANTeeShirt";
+    const price = 850;
+
+    const subject = "PLANTeeShirts Order";
+
+    const body =
+      "Hello PLANTeeShirts!\n\n" +
+      "I would like to order:\n\n" +
+      "Product: " + product + "\n" +
+      "Price: ₱" + price.toFixed(2) + "\n" +
+      "Quantity: " + quantity + "\n" +
+      "Total: ₱" + (price * quantity).toFixed(2) + "\n\n" +
+      "Thank you!";
+
+    window.location.href =
+      "mailto:planteeshirt@email.com?subject=" +
+      encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body);
+
+  }
+</script>
 
 </body>
 </html>
