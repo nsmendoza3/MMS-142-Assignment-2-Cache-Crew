@@ -1,0 +1,248 @@
+
+:root {
+  --plant-green: #214f3d;
+  --plant-orange: #e65e37;
+  --plant-bg: #f7f7f5;
+  --plant-text: #244b3b;
+}
+
+
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--plant-bg);
+  color: var(--plant-text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* NAVIGATION */
+.site-navbar,
+.site-footer {
+  background: var(--plant-green);
+  flex-shrink: 0;
+}
+
+.brand-name {
+  color: #fff;
+  font-family: Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-navbar .nav-link {
+  color: #fff;
+  font-size: .85rem;
+  font-weight: 600;
+  margin-left: .8rem;
+}
+
+.site-navbar .nav-link:hover,
+.site-navbar .nav-link:focus {
+  color: #dce9df;
+}
+
+/* PRODUCT SECTION */
+.product-section {
+  flex: 1;
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+/* PRODUCT GALLERY */
+.product-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+/* PRODUCT IMAGE BOX */
+.product-image-placeholder {
+  height: 410px;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .75rem;
+  border: 1px dashed #aab8ae;
+  border-radius: .5rem;
+  background: #ededeb;
+  color: #68786e;
+  text-align: center;
+  font-size: .95rem;
+  overflow: hidden;
+}
+
+/* PRODUCT IMAGE SIZE */
+.product-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.product-image-placeholder span {
+  display: block;
+}
+
+/* PRODUCT INFORMATION */
+.product-title {
+  color: var(--plant-green);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: .25rem;
+}
+
+.product-price {
+  color: var(--plant-green);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+/* COLOR AND SIZE OPTIONS */
+.option-label {
+  display: block;
+  color: #222;
+  font-size: .85rem;
+  font-weight: 700;
+  margin-bottom: .45rem;
+}
+
+.option-buttons .btn {
+  min-width: 76px;
+  margin: 0 .25rem .4rem 0;
+  border-color: #888;
+  color: #222;
+  background: transparent;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.option-buttons .btn:hover,
+.option-buttons .btn:focus {
+  background: #e4ebe6;
+  border-color: var(--plant-green);
+}
+
+/* QUANTITY CONTROL */
+.quantity-control {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #999;
+  border-radius: .35rem;
+  overflow: hidden;
+}
+
+.quantity-control button,
+.quantity-control input {
+  border: 0;
+  background: transparent;
+  text-align: center;
+  width: 34px;
+  padding: .25rem;
+}
+
+.quantity-control input {
+  width: 42px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+/* PURCHASE BUTTONS */
+.btn-add-cart {
+  background: var(--plant-green);
+  color: #fff;
+}
+
+.btn-buy-now {
+  background: var(--plant-orange);
+  color: #fff;
+}
+
+.btn-add-cart:hover,
+.btn-buy-now:hover {
+  color: #fff;
+  filter: brightness(.93);
+}
+
+/* FOOTER */
+.site-footer {
+  color: #fff;
+  text-align: center;
+  padding: .8rem 1rem;
+  font-size: .85rem;
+  margin-top: auto;
+}
+
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* TABLET AND MOBILE */
+@media (max-width: 767.98px) {
+
+  .brand-name {
+    font-size: 1.35rem;
+  }
+
+  .site-navbar .nav-link {
+    margin-left: 0;
+    padding: .6rem 0;
+  }
+
+  .product-section {
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .product-gallery {
+    gap: .6rem;
+  }
+
+  .product-image-placeholder {
+    height: 260px;
+    font-size: .8rem;
+  }
+
+  .product-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .product-details {
+    margin-top: 2rem;
+  }
+
+  .product-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* SMALL MOBILE SCREENS */
+@media (max-width: 420px) {
+
+  .product-image-placeholder {
+    height: 210px;
+    padding: .5rem;
+  }
+
+  .option-buttons .btn {
+    min-width: 66px;
+  }
+}
+
+.option-buttons .btn.selected {
+    background-color: var(--plant-green);
+    color: #FFFFFF;
+    border-color: var(--plant-green);
+}
