@@ -240,9 +240,9 @@
           <span class="option-label">COLOR</span>
 
           <div class="option-buttons">
-            <button type="button" class="btn btn-outline-secondary btn-sm">WHITE</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm">BLACK</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm">GREY</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm color-option" onclick="selectColor(this)">WHITE</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm color-option" onclick="selectColor(this)">GRAY</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm color-option" onclick="selectColor(this)">BLACK</button>
           </div>
 
         </div>
@@ -254,9 +254,9 @@
           <span class="option-label">SIZE</span>
 
           <div class="option-buttons">
-            <button type="button" class="btn btn-outline-secondary btn-sm">SMALL</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm">MEDIUM</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm">LARGE</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm size-option" onclick="selectSize(this)">SMALL</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm size-option" onclick="selectSize(this)">MEDIUM</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm size-option" onclick="selectSize(this)">LARGE</button>
           </div>
 
         </div>
@@ -299,10 +299,11 @@
             ADD TO CART
           </button>
 
-          <a href="mailto:planteeshirt@email.com?subject=PLANTeeShirts%20Order"
-             class="btn btn-buy-now btn-sm fw-semibold">
-              BUY IT NOW
-              </a>
+          <button type="button"
+            class="btn btn-buy-now btn-sm fw-semibold"
+            onclick="orderNow()">
+            BUY IT NOW
+          </button>  
 
         </div>
 
@@ -329,42 +330,61 @@
 
  <!-- Quantity and Order Functions -->
 <script>
+  let selectedColor = "";
+  let selectedSize = "";
+
+  // Select Color
+  function selectColor(button) {
+    document.querySelectorAll(".color-option").forEach(btn => {
+      btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+    selectedColor = button.textContent.trim();
+  }
+
+  // Select Size
+  function selectSize(button) {
+    document.querySelectorAll(".size-option").forEach(btn => {
+      btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+    selectedSize = button.textContent.trim();
+  }
+
+  // Quantity Function
   function changeQuantity(amount) {
-
     const quantityInput = document.getElementById("quantity");
-
     const currentValue = parseInt(quantityInput.value, 10) || 1;
 
-    quantityInput.value = Math.max(
-      1,
-      Math.min(99, currentValue + amount)
-    );
-
+    quantityInput.value = Math.max(1, Math.min(99, currentValue + amount));
   }
 
+  // Buy Now Function
   function orderNow() {
-
     const quantity = document.getElementById("quantity").value;
-    const product = "I Be-Leaf in You PLANTeeShirt";
-    const price = 850;
 
-    const subject = "PLANTeeShirts Order";
+    if (!selectedColor || !selectedSize) {
+      alert("Please select your color and size before ordering!");
+      return;
+    }
 
-    const body =
-      "Hello PLANTeeShirts!\n\n" +
-      "I would like to order:\n\n" +
-      "Product: " + product + "\n" +
-      "Price: ₱" + price.toFixed(2) + "\n" +
+    if (!Number.isInteger(Number(quantity)) || Number(quantity) < 1 || Number(quantity) > 99) {
+      alert("Please enter a valid quantity!");
+      return;
+    }
+
+    alert(
+      "Thank you for your order!\n\n" +
+      "Product: I Be-Leaf in You PLANTeeShirt\n" +
+      "Color: " + selectedColor + "\n" +
+      "Size: " + selectedSize + "\n" +
       "Quantity: " + quantity + "\n" +
-      "Total: ₱" + (price * quantity).toFixed(2) + "\n\n" +
-      "Thank you!";
-
-    window.location.href =
-      "mailto:planteeshirt@email.com?subject=" +
-      encodeURIComponent(subject) +
-      "&body=" + encodeURIComponent(body);
-
+      "Total: ₱" + (850 * quantity).toFixed(2)
+    );
   }
+</script>
 </script>
 
 </body>
