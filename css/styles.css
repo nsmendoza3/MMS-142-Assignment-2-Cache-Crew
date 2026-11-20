@@ -19,8 +19,8 @@ h1 {
     }
   
 header {
-    background: var(--primary);
-    color: var(--background);
+    background: var(--background);
+    color: var(--primary);
     }
 
 footer {
