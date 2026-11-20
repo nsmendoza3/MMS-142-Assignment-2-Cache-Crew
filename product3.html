@@ -240,9 +240,9 @@
           <span class="option-label">COLOR</span>
 
           <div class="option-buttons">
-            <button type="button" class="btn btn-outline-secondary btn-sm">WHITE</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm">GRAY</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm">BLACK</button>
+           <button type="button" class="btn btn-outline-secondary btn-sm color-option" onclick="selectColor(this)">WHITE</button>
+           <button type="button" class="btn btn-outline-secondary btn-sm color-option" onclick="selectColor(this)">GRAY</button
+           <button type="button" class="btn btn-outline-secondary btn-sm color-option" onclick="selectColor(this)">BLACK</button>
           </div>
 
         </div>
@@ -254,9 +254,9 @@
           <span class="option-label">SIZE</span>
 
           <div class="option-buttons">
-            <button type="button" class="btn btn-outline-secondary btn-sm">SMALL</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm">MEDIUM</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm">LARGE</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm size-option" onclick="selectSize(this)">SMALL</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm size-option" onclick="selectSize(this)">MEDIUM</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm size-option" onclick="selectSize(this)">LARGE</button>
           </div>
 
         </div>
@@ -300,7 +300,8 @@
           </button>
 
           <button type="button"
-            class="btn btn-buy-now btn-sm fw-semibold">
+            class="btn btn-buy-now btn-sm fw-semibold"
+            onclick="orderNow()">
             BUY IT NOW
           </button>
 
@@ -329,18 +330,62 @@
 
   <!-- Quantity Function -->
   <script>
-    function changeQuantity(amount) {
+    let selectedColor = "";
+  let selectedSize = "";
 
-      const quantityInput = document.getElementById("quantity");
+  // Select Color
+  function selectColor(button) {
+    document.querySelectorAll(".color-option").forEach(btn => {
+      btn.classList.remove("active");
+    });
 
-      const currentValue = parseInt(quantityInput.value, 10) || 1;
+    button.classList.add("active");
+    selectedColor = button.textContent;
+  }
 
-      quantityInput.value = Math.max(
-        1,
-        Math.min(99, currentValue + amount)
-      );
+  // Select Size
+  function selectSize(button) {
+    document.querySelectorAll(".size-option").forEach(btn => {
+      btn.classList.remove("active");
+    });
 
+    button.classList.add("active");
+    selectedSize = button.textContent;
+  }
+
+  // Quantity Function
+  function changeQuantity(amount) {
+    const quantityInput = document.getElementById("quantity");
+    const currentValue = parseInt(quantityInput.value, 10) || 1;
+
+    quantityInput.value = Math.max(
+      1,
+      Math.min(99, currentValue + amount)
+    );
+  }
+
+  // Buy Now Function
+  function orderNow() {
+    const quantity = document.getElementById("quantity").value;
+
+    if (!selectedColor || !selectedSize) {
+      alert("Please select your color and size before ordering!");
+      return;
     }
+
+    if (quantity < 1 || quantity > 99 || !Number.isInteger(Number(quantity))) {
+      alert("Please enter a valid quantity!");
+      return;
+    }
+
+    alert(
+      "Thank you for your order!\n\n" +
+      "Product: Avocuddle PLANTeeShirt\n" +
+      "Color: " + selectedColor + "\n" +
+      "Size: " + selectedSize + "\n" +
+      "Quantity: " + quantity
+    );
+  }
   </script>
 
 </body>
