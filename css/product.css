@@ -169,7 +169,7 @@ body {
 
 .btn-add-cart:hover,
 .btn-buy-now:hover {
-  color: #fff;
+  color: #FFFF00;
   filter: brightness(.93);
 }
 
