@@ -43,8 +43,14 @@ function changeQuantity(amount) {
 // Build the mailto link
 function buildMailto() {
 
-  const productName = "Do Good Work Tee: I Be-Leaf in You PLANTeeShirt";
-  const price = 850;
+  // Automatically get the product name from the page heading
+  const productName = document.querySelector(".product-title").textContent.trim();
+
+  // Get the product price from the page
+  const priceText = document.querySelector(".product-price").textContent;
+  const price = Number(priceText.replace(/[^\d.]/g, ""));
+
+  // Get quantity
   const quantity = Number(document.querySelector("#quantity").value);
 
   // Validate selections
@@ -55,6 +61,11 @@ function buildMailto() {
 
   if (!Number.isInteger(quantity) || quantity < 1 || quantity > 99) {
     alert("Please enter a valid quantity!");
+    return;
+  }
+
+  if (!Number.isFinite(price) || price <= 0) {
+    alert("Unable to get the product price!");
     return;
   }
 
@@ -82,12 +93,14 @@ function buildMailto() {
 }
 
 // Listen for the BUY IT NOW button click
-buyButton.addEventListener("click", function() {
+if (buyButton) {
+  buyButton.addEventListener("click", function() {
 
-  const mailtoLink = buildMailto();
+    const mailtoLink = buildMailto();
 
-  if (mailtoLink) {
-    window.location.href = mailtoLink;
-  }
+    if (mailtoLink) {
+      window.location.href = mailtoLink;
+    }
 
-});
+  });
+}
